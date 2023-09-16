@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    background-color: yellowgreen;
+    flex-wrap: wrap;
+    width: 9em;
+}
+
+.container > section {
+    background-color: white;
+    margin: .5em;
+    height: 2em;
+    width: 2em;
+    text-align: center;
+    line-height: 2em;
+}
+
