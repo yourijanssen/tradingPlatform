@@ -190,5 +190,16 @@ describe("Trader classes unit tests", () => {
         expect(transaction.oldBalance).to.equal(expected);
         expect(transaction.newBalance).to.equal(expected);
       });
+
+      it("should disallow a transaction when the balance is lower than 0", () => {
+        const initialBalance = -1000;
+        const transactionAmount = 500;
+        const expected = undefined;
+
+        fund.doTransaction(initialBalance);
+        const transaction: Transaction = trader.transaction(transactionAmount);
+        expect(transaction.oldBalance).to.equal(expected);
+        expect(transaction.newBalance).to.equal(expected);
+      });
     });
 });
